@@ -33,14 +33,14 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
-   # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('admin', admin.site.urls),
-  #  path('shows/', views.show_list),
+    path('shows/', views.show_list),
     path('shows', views.show_list),
     path('shows/<int:id>', views.show_detail),
- #   path('docs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema_redoc'),
+    path('docs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema_redoc'),
     path('docs', schema_view.with_ui('redoc', cache_timeout=0), name='schema_redoc'),
-#    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema_swagger'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema_swagger'),
     path('swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema_swagger'),
 ]
 

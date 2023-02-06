@@ -27,8 +27,13 @@ def show_list(request, format=None):
             avg_rating = avg_rating / total
         
         # create custom response to include all information
-        custom_response = ('total: '+str(total),'average rating: '+str(avg_rating), {'shows':serializer.data} )        
+        custom_response = {
+                'total': total,
+                'average_rating': avg_rating,
+                'shows': serializer.data,
+            }
         return Response(custom_response)
+
     if request.method == 'POST':
         serializer = ShowSerializerID(data = request.data)
         if serializer.is_valid():
